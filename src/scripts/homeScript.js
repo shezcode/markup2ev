@@ -29,15 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  async function fetchMovieData(id){
-    try {
-      const response = await fetch(`http://localhost:3000/api/movieData?id=${id}`);
-      const data = await response.json();
-      console.log(data);
-    } catch (error){
-      console.error(error);
-    }
-  }
+
 
   fetchTopRatedMovies();
 })
@@ -45,7 +37,6 @@ document.addEventListener('DOMContentLoaded', function () {
   //make this work, details page not being dynamic
   function viewDetails(id){
     window.location.href = `detail.html?id=${id}`
-    fetchMovieData(id);
   }
 
 

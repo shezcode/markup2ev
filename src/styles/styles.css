@@ -51,6 +51,10 @@ body {
   color: var(--main-text-color);
 }
 
+.main {
+  background-color: var(--lighter-dark);
+}
+
 a {
   color: var(--main-text-color);
   font-family: var(--text-font);
@@ -97,8 +101,6 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url(/assets/nav2.svg) no-repeat;
-  background-size: cover;
 }
 
 .navbar {

@@ -25,7 +25,6 @@ app.get('/api/movieData/:id', async (req, res) => {
     console.log("id is: ", id);
     const response = await axios.get(`https://api.themoviedb.org/3/movie/${id}?language=en-US&api_key=${apiKey}`);
     res.json(response.data);
-    console.log(response);
   } catch (error) {
     res.status(500).send('Error fetch movie data')
   }
