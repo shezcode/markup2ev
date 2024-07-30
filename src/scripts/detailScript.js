@@ -5,9 +5,9 @@ async function fetchMovieData(id){
     const movie = document.getElementById('movie-card');
     const movieDiv = document.createElement('div');
     movieDiv.innerHTML = `
-        <h3>${data.original_title}</h3>
-        <h4>${data.release_date.split("-")[0]}</h4>
-        <img src="https://image.tmdb.org/t/p/original/${data.poster_path}" width="200"/>
+      <h3>${data.original_title}</h3>
+      <h4>${data.release_date.split("-")[0]}</h4>
+      <img src="https://image.tmdb.org/t/p/original/${data.poster_path}" width="200"/>
         `;
       movie.appendChild(movieDiv);
   } catch (error){

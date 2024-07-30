@@ -30,6 +30,33 @@ app.get('/api/movieData/:id', async (req, res) => {
   }
 })
 
+app.get('/api/nowPlaying', async (req, res) => {
+  try {
+    const response = await axios.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}`);
+    res.json(response.data);
+  } catch (error) {
+    res.status(500).send('Error fetch movie data')
+  }
+})
+
+app.get('/api/popular', async (req, res) => {
+  try {
+    const response = await axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`);
+    res.json(response.data);
+  } catch (error) {
+    res.status(500).send('Error fetch movie data')
+  }
+})
+
+app.get('/api/upcoming', async (req, res) => {
+  try {
+    const response = await axios.get(`https://api.themoviedb.org/3/movie/upcoming?api_key=${apiKey}`);
+    res.json(response.data);
+  } catch (error) {
+    res.status(500).send('Error fetch movie data')
+  }
+})
+
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 });
