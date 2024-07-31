@@ -1,30 +1,34 @@
-function displayResults(results) {
-    const resultsContainer = document.querySelector('navbar__search--input');
-    resultsContainer.innerHTML = '';
-
-    results.forEach(item => {
-        const itemElement = document.createElement('div');
-        itemElement.className = 'grid-item';
-        itemElement.textContent = item.name + ' - ' + item.description;
-        resultsContainer.appendChild(itemElement);
-    });
+function viewDetails(id){
+  window.location.href = `detail.html?id=${id}`
 }
 
-// Function to search the data object
-function searchItems(query) {
-    const lowerCaseQuery = query.toLowerCase();
-    const filteredResults = data.filter(item => 
-        item.name.toLowerCase().includes(lowerCaseQuery) || 
-        item.description.toLowerCase().includes(lowerCaseQuery)
-    );
-    displayResults(filteredResults);
+function displayData(data){
+  let movies = document.getElementById('movie-list');
+  movies.innerHTML = '';
+  data.forEach(movie => {
+    let movieDiv = document.createElement('div');
+    movieDiv.classList.add('movie__card');
+    movieDiv.style.backgroundImage = `url(https://image.tmdb.org/t/p/original/${movie.poster_path})`
+    movieDiv.innerHTML = `
+      <h3>${movie.original_title}</h3>
+      <h4>${movie.release_date.split("-")[0]}</h4>
+      <button class="movie__card--button" onclick="viewDetails(${movie.id})">View Details</button>
+      `;
+    movies.appendChild(movieDiv);
+  })
 }
 
-// Event listener for search input
-document.querySelector('navbar__search--input').addEventListener('input', (event) => {
-    const query = event.target.value;
-    searchItems(query);
-});
+document.getElementById("search-form").addEventListener('submit', (event) => {
+  event.preventDefault();
+  const query = document.querySelector('input').value;
+  searchItems(query);
+})
 
-// Initial display of all items
-displayResults(data);
+function searchItems(query){
+  const lowerCaseQuery = query.toLowerCase(); 
+  const filteredData = apiData.filter(item => 
+    item.title.toLowerCase().includes(lowerCaseQuery)
+  );
+  displayData(filteredData);
+}
+

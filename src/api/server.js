@@ -12,8 +12,22 @@ app.use(cors());
 
 app.get('/api/topRated', async (req, res) => {
   try {
-    const response = await axios.get(`https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1&api_key=${apiKey}`);
-    res.json(response.data);
+    const response1 = await axios.get(`https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1&api_key=${apiKey}`);
+    const response2 = await axios.get(`https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=2&api_key=${apiKey}`);
+    const response3 = await axios.get(`https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=3&api_key=${apiKey}`);
+
+    const combinedResults = [
+      ...response1.data.results,
+      ...response2.data.results,
+      ...response3.data.results
+    ];
+
+    const response = {
+      ...response1.data,
+      results: combinedResults
+    };
+
+    res.json(response);
   } catch (error) {
     res.status(500).send('Error fetching top rated data');
   }
