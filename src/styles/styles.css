@@ -53,6 +53,16 @@ body {
 
 .main {
   background-color: var(--lighter-dark);
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+}
+
+#movie-list, #upcoming-movies, #popular-movies {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1em;
+  padding: 1em;
 }
 
 a {
@@ -217,10 +227,10 @@ header {
 
 .movie__card {
   background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
   padding: 2em;
-  width: 400px;
-  height: 600px;
+  height: 500px;
   border-radius: 8px;
 }
 
