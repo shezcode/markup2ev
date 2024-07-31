@@ -12,7 +12,7 @@
         <a href="index.html">
           <img src="./assets/NFLogo.png" alt="Nerdflix Logo" width="250" class="navbar__logo">
         </a>
-        <div class="navbar__search">
+        <form id="search-form" class="navbar__search">
           <input type="text" name="search" autocomplete="off" placeholder="Search" class="navbar__search--input">
           <button type="submit" aria-label="Submit-search">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -22,7 +22,7 @@
               <path d="m21 21-4.3-4.3" />
             </svg>
           </button>
-        </div>
+        </form>
         <div class="navbar__links">
           <ul>
             <li><a href="nowPlaying.html">NOW PLAYING</a></li>
@@ -48,7 +48,6 @@
       </nav>
     </header>
     <main class="main">
-      <h1>NERDFLIX</h1> 
       <div id="movie-list"></div>
     </main>
     <footer></footer>

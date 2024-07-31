@@ -58,7 +58,7 @@ body {
   justify-content: center;
 }
 
-#movie-list, #upcoming-movies, #popular-movies {
+#movie-list, #upcoming-movies, #popular-movies, #now-movies {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 1em;
