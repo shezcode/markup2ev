@@ -12,10 +12,10 @@
 
 
 :root {
-  --primary-color: #41cffa;
-  --secondary-color: #ffce38;
+  --primary-color: #E50914;
+  --secondary-color: #B00710;
   --sec-blue: #058AB3;
-  --sec-yellow: #ffdb70;
+  --sec-yellow: #E50914;
   --main-text-color: #f9f9f9;
   --sec-text-color: #edebe9;
   --dark: #121212;
@@ -109,6 +109,7 @@ header {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  padding: 2em;
 }
 
 .navbar__search {
@@ -199,7 +200,6 @@ header {
 
 .navbar__links a {
   text-decoration: none;
-
 }
 
 .navbar__links.show {
@@ -213,5 +213,205 @@ header {
 
 .navbar__icons {
   display: none;
+}
+
+.movie__card {
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 2em;
+  width: 400px;
+  height: 600px;
+  border-radius: 8px;
+}
+
+@media screen and (min-width: 768px) {
+
+  h4 {
+    font-size: x-large;
+    color: transparent;
+    text-align: 0 1px 1px;
+    -webkit-text-stroke: 1px #fff;
+  }
+
+  header {
+    position: static;
+  }
+
+  .navbar__search.show {
+    display: flex;
+  }
+
+  .navbar__links {
+    display: flex;
+    flex-direction: row;
+    position: static;
+    width: auto;
+    gap: 2em;
+    text-align: center;
+    font-size: medium;
+  }
+
+  .navbar__links.show {
+    gap: 2em;
+    font-size: medium;
+  }
+
+
+  .navbar__links ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5em;
+  }
+
+  .navbar__icons {
+    display: flex;
+    gap: 1em;
+    color: var(--lighter-dark);
+    padding: 1em;
+    background-color: var(--sec-text-color);
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  }
+
+  .navbar__icons--line {
+    border-right: 2px solid var(--lighter-dark);
+    flex-grow: 1;
+  }
+
+  .navbar__icons svg {
+    transition: 0.4s all ease-in-out;
+  }
+
+  .navbar__icons svg:hover {
+    color: var(--primary-color);
+    transform: scale(115%);
+  }
+
+  .navbar__icons:hover {
+    cursor: pointer;
+  }
+
+  .navbar__hamburger {
+    display: none;
+  }
+
+  .navbar__search {
+    width: 30%;
+  }
+
+  footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+    padding: 1em 2em;
+    background: url(/assets/nav2.svg) no-repeat;
+    background-size: cover;
+    width: 100%;
+  }
+
+  .footer__links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5em;
+    padding: 1em;
+  }
+
+  .footer__links li {
+    list-style-type: none;
+  }
+
+  .footer__links a {
+    text-decoration: none;
+    font-size: small;
+  }
+
+
+  .footer__right {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+    width: 60%;
+    align-items: start;
+    justify-content: space-between;
+    padding: 1em;
+  }
+
+
+  .footer__newsletter {
+    padding: 1em;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    width: 60%;
+  }
+
+  .footer__socials {
+    padding: 1em;
+  }
+
+  .footer__socials h5 {
+    font-size: medium;
+    text-transform: uppercase;
+  }
+
+  .footer__socials--icons {
+    color: var(--sec-text-color);
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
+    padding: 1em 0;
+  }
+
+  .icon-container {
+    padding: 0.5em;
+    background-color: #121212;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  }
+
+  .footer__newsletter--send {
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    border-radius: 12px;
+    position: relative;
+    max-width: 350px;
+  }
+
+  .footer__newsletter--send input {
+    outline: none;
+    border: none;
+    width: 100%;
+    height: 40px;
+    border-radius: 12px;
+    padding: 15px;
+    font-size: small;
+    display: block;
+  }
+
+  .footer__newsletter--send button {
+    outline: none;
+    border: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 12px;
+    padding: 15px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    background-color: var(--sec-yellow);
+    font-weight: 700;
+  }
+
+  .footer__newsletter--send button:hover {
+    cursor: pointer;
+  }
 }
 
