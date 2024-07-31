@@ -7,7 +7,46 @@
     <link href="styles/styles.css" rel="stylesheet">
   </head>
   <body>
-    <header></header> 
+    <header>
+      <nav class="navbar">
+        <a href="index.html">
+          <img src="./assets/NFLogo.png" alt="Nerdflix Logo" width="150" class="navbar__logo">
+        </a>
+        <div class="navbar__search">
+          <input type="text" name="search" autocomplete="off" placeholder="Search" class="navbar__search--input">
+          <button type="submit" aria-label="Submit-search">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-search">
+              <circle cx="11" cy="11" r="8" />
+              <path d="m21 21-4.3-4.3" />
+            </svg>
+          </button>
+        </div>
+        <div class="navbar__links">
+          <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="nowPlaying.html">NOW PLAYING</a></li>
+            <li><a href="upcoming.html">UPCOMING</a></li>
+          </ul>
+        </div>
+        <div class="navbar__hamburger">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-menu icon">
+            <line x1="4" x2="20" y1="12" y2="12" />
+            <line x1="4" x2="20" y1="6" y2="6" />
+            <line x1="4" x2="20" y1="18" y2="18" />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-x icon close">
+            <path d="M18 6 6 18" />
+            <path d="m6 6 12 12" />
+          </svg>
+        </div>
+      </nav>
+    </header>
     <main>
       <div id="popular-movies"></div>
     </main>

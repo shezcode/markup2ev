@@ -22,9 +22,10 @@ app.get('/api/topRated', async (req, res) => {
 app.get('/api/movieData/:id', async (req, res) => {
   try {
     const id = req.params.id; 
-    console.log("id is: ", id);
-    const response = await axios.get(`https://api.themoviedb.org/3/movie/${id}?language=en-US&api_key=${apiKey}`);
-    res.json(response.data);
+    const responseBasic = await axios.get(`https://api.themoviedb.org/3/movie/${id}?language=en-US&api_key=${apiKey}`);
+    const responseCredits = await axios.get(`https://api.themoviedb.org/3/movie/${id}/credits?language=en-US&api_key=${apiKey}`); 
+    const response = {...responseBasic.data, ...responseCredits.data};
+    res.json(response);
   } catch (error) {
     res.status(500).send('Error fetch movie data')
   }
@@ -35,7 +36,7 @@ app.get('/api/nowPlaying', async (req, res) => {
     const response = await axios.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}`);
     res.json(response.data);
   } catch (error) {
-    res.status(500).send('Error fetch movie data')
+    res.status(500).send('Error fetch now playing data')
   }
 })
 
@@ -44,7 +45,7 @@ app.get('/api/popular', async (req, res) => {
     const response = await axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`);
     res.json(response.data);
   } catch (error) {
-    res.status(500).send('Error fetch movie data')
+    res.status(500).send('Error fetch popular data')
   }
 })
 
@@ -53,7 +54,7 @@ app.get('/api/upcoming', async (req, res) => {
     const response = await axios.get(`https://api.themoviedb.org/3/movie/upcoming?api_key=${apiKey}`);
     res.json(response.data);
   } catch (error) {
-    res.status(500).send('Error fetch movie data')
+    res.status(500).send('Error fetch upcoming data')
   }
 })
 

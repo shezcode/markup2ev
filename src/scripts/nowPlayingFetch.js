@@ -10,11 +10,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
       data.results.forEach(movie => {
         const movieDiv = document.createElement('div');
-        movieDiv.classList.add('movie');
+        movieDiv.classList.add('movie__card');
+        movieDiv.style.backgroundImage = `url(https://image.tmdb.org/t/p/original/${movie.poster_path})`
         movieDiv.innerHTML = `
           <h2>${movie.original_title}</h2>
           <h4>${movie.release_date.split("-")[0]}</h4>
-          <img src="https://image.tmdb.org/t/p/original/${movie.poster_path}" width="200"/>
           <button onclick="viewDetails(${movie.id})">View Details</button>
         `;
         movies.appendChild(movieDiv);
